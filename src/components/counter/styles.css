@@ -1,0 +1,15 @@
+.counterContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 0.7rem;
+}
+
+.counterButton{
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.counterText{
+    font-size: 1.7rem;
+}

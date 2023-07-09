@@ -1,32 +1,19 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import NavBar from './components/header/NavBar'
-import Greeting from './components/products/ItemListContainer'
-import Counter from './components/counter';
-
+import Card from './components/products/card'
 
 
 function App() {
-  const [counter, setCounter] = useState(0);
-  const isValidCounter = counter > 0;
-  const incrementCounter = () => {
-    setCounter((prevCounter) => prevCounter + 1);
-  };
-
-  const decrementCounter = () => {
-    if (!isValidCounter) return;
-    setCounter((prevCounter) => prevCounter - 1);
-  }
-
-
 
   const [products, setProducts] = useState([]);
+
 
 
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await fetch('./component/products', {
+        const response = await fetch('https://64a1e8ee0079ce56e2db79ff.mockapi.io/products', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -34,22 +21,28 @@ function App() {
         });
 
         const data = await response.json();
-        setProducts(data)
-
+        setProducts(data);
       } catch (error) {
-        console.error(error);
+
       }
     }
     getProducts();
   }, [])
 
-  console.log([products])
+
 
   return (
     <div>
       <NavBar logo="MonsterMarket" />
-      <Greeting />
-      <Counter counter={counter} onDecrementCounter={decrementCounter} onIncrementCounter={incrementCounter} isValidCounter={isValidCounter}/>
+
+      <div className='cardContainer'>
+        {
+          products.map((product) => (
+            <Card {...product} />
+          ))
+        }
+      </div>
+
     </div>
   )
 }
