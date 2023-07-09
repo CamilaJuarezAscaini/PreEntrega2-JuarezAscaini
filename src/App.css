@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #F4F3EE;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  ul {
+    list-style: none;
+  }
+
+  .greeting{
+    text-align: center;
+    color: rgb(71, 47, 31);
+  }
