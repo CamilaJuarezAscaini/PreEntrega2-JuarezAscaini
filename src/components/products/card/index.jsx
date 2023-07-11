@@ -3,7 +3,7 @@ import Counter from '../../counter'
 import { useState } from 'react'
 
 
-const Card = ({ id, image, name, category, description, price, onAddToCart }) => {
+const Card = ({ id, image, name, category, description, price, onAddToCart, onShowDetails }) => {
 
     const [counter, setCounter] = useState(0);
     const isValidCounter = counter > 0;
@@ -18,7 +18,7 @@ const Card = ({ id, image, name, category, description, price, onAddToCart }) =>
     }
 
     return (
-        <div key={id} className='card'>
+        <div key={id} className='card' onClick={() => onShowDetails(id)}>
             <img className='cardImage' src={image} alt={name} />
             <div className='cardContent'>
                 <h3 className='cardName'>{name}</h3>

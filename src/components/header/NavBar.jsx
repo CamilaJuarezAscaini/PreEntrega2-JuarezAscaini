@@ -5,21 +5,34 @@ import CartWidget from "./CartWidget";
 import Input from "./input";
 
 const NavBar = ({ logo }) => {
-
+    const [products, setProducts] = useState([]);
     const [search, setSearch] = useState('');
-    const [active, setActive] = useState (false);
+    const [active, setActive] = useState(false);
+    const [productFiltered, setProductFiltered] = useState ([]);
 
-    const onChange = (event) =>{
+// NO FUNCIONA
+    // const filterBySearch = (query) => {
+    //     let updateProductList = [...products];
+
+    //     updateProductList = updateProductList.filter((item) => {
+    //         return item.name.toLowerCase().indexOf(query.toLowerCase()) === -1;
+    //     })
+    //     setProductFiltered(updateProductList);
+    // }
+
+
+    const onChange = (event) => {
         const value = event.target.value;
         setSearch(value);
+        // filterBySearch(value);
     }
 
-    const onFocus = () =>{
-        setActive (true);
-    }
 
-    const onBlur = () =>{
-        setActive (false);
+    const onFocus = () => {
+        setActive(true);
+    }
+    const onBlur = () => {
+        setActive(false);
     }
 
     const inputClass = `container ${active ? 'active' : ''}`

@@ -2,12 +2,21 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import NavBar from './components/header/NavBar'
 import Card from './components/products/card'
+import Details from './components/products/details';
 
 
 function App() {
 
   const [products, setProducts] = useState([]);
+  const [showDetails, setShowDetails] = useState(false);
+  const [productDetail, setProductDetail] = useState(null)
 
+
+  const onShowDetails = (id) => {
+    setShowDetails(true);
+    const findProduct = products.find((product) => product.id === id);
+    setProductDetail(findProduct);
+  }
 
 
   useEffect(() => {
@@ -34,16 +43,30 @@ function App() {
   return (
     <div>
       <NavBar logo="MonsterMarket" />
+      <>
+        {showDetails ? (
+          <>
+            <div className='headerDetailContainer'>
+              {/* NO FUNCIONA */}
+              {/* <button onClick={() => setShowDetails(false)} className='backButton'>Back</button> */}
+              <h2 >Product Detail</h2>
+            </div>
+            <Details {...productDetail} />
+          </>
+        ) : (
+          <div className='cardContainer'>
+            {
+              products.map((product) => (
+                <Card {...product} onShowDetails={onShowDetails} />
+              ))
+            }
+          </div>
+        )}
 
-      <div className='cardContainer'>
-        {
-          products.map((product) => (
-            <Card {...product} />
-          ))
-        }
-      </div>
+      </>
 
-    </div>
+
+    </div >
   )
 }
 

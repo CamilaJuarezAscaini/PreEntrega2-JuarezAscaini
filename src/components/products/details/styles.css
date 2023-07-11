@@ -1,71 +1,66 @@
-.card{
+.cardDetail{
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: 0.6rem 2.5rem;
     padding: 0.8rem;
-    max-width: 290px;
     height:400px;
-    transition: .2s ease-out;
-    cursor: pointer;
 }
 
-.card:hover{
-    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
-    scale: 1.01;
-}
 
-.cardImage{
-    width: 200px;
-    height: 200px;
+.cardImageDetail{
+    width: 350px;
+    height: 350px;
     object-fit: cover;
 }
 
-.cardContent{
-    display: flex;
-    flex-direction: column;
+.cardContentDetail{
     justify-content: center;
     align-items: center;
 }
 
-.cardName{
-    font-size: 1.2rem;
+.cardNameDetail{
+    font-size: 2.2rem;
     padding: 0.3rem;
-}
-
-.cardCategory{
-    font-size: 0.8rem;
-    color: blueviolet;
-    font-weight: bold;
-    padding: 0.3rem;
-}
-
-.cardDescription{
-    font-size: 0.87rem;
-    min-height: 4rem;
     text-align: center;
 }
 
-.cardPrice{
-    font-size: 1.2rem;
+.cardCategoryDetail{
+    font-size: 1.3rem;
+    color: blueviolet;
+    font-weight: bold;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.cardDescriptionDetail{
+    font-size: 1.3rem;
+    min-height: 4rem;
+    text-align: center;
+    padding-inline: 50px;
+}
+
+.cardPriceDetail{
+    font-size: 1.5rem;
     font-weight: bold;
     color: blueviolet;
-    padding: 0.3rem;
+    padding: 0.7rem;
+    text-align: center;
 }
 
 
-.cardActions{
+.cardActionsDetail{
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.cardActions button{
+.cardActionsDetail button{
     border: none;
     background-color: blueviolet;
     color: white;
@@ -73,7 +68,9 @@
     border-radius: 0.2rem;
 }
 
-.cardButton{
+.cardButtonDetail{
     width: 7rem;
     height: 2rem;
+    cursor: pointer;
+    
 }

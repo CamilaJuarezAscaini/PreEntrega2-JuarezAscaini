@@ -5,8 +5,8 @@
 .container input {
     width: max-content;
     height: 30px;
-    margin-top: 10px;
-    margin-left: 450px;
+    margin-top: 0.5rem;
+    margin-left: 27rem;
     padding: 0 1rem;
     position: relative;
     border: noen;
@@ -17,6 +17,6 @@
 
 .container.active input {
     background-color: #e3e0de;
-    box-shadow: 15px 2px 15px 0px rgba(255, 255, 255, 0.2);
+    box-shadow: 15px 2px 15px 0px rgba(255, 255, 255, 0.15);
     transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out   ;
 }
