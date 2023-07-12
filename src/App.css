@@ -16,15 +16,3 @@
   ul {
     list-style: none;
   }
-
-  .greeting{
-    text-align: center;
-    color: rgb(71, 47, 31);
-  }
-
-  .cardContainer{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 3.22rem;
-    justify-content: center;
-  }

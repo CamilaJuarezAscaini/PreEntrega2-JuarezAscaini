@@ -12,6 +12,7 @@
     height:400px;
     transition: .2s ease-out;
     cursor: pointer;
+    z-index: 1;
 }
 
 .card:hover{

@@ -18,7 +18,7 @@ const Card = ({ id, image, name, category, description, price, onAddToCart, onSh
     }
 
     return (
-        <div key={id} className='card' onClick={() => onShowDetails(id)}>
+        <div className='card' onClick={() => onShowDetails(id)}>
             <img className='cardImage' src={image} alt={name} />
             <div className='cardContent'>
                 <h3 className='cardName'>{name}</h3>

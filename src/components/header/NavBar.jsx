@@ -5,7 +5,6 @@ import CartWidget from "./CartWidget";
 import Input from "./input";
 
 const NavBar = ({ logo }) => {
-    const [products, setProducts] = useState([]);
     const [search, setSearch] = useState('');
     const [active, setActive] = useState(false);
     const [productFiltered, setProductFiltered] = useState ([]);
