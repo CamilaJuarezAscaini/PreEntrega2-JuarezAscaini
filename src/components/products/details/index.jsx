@@ -6,8 +6,6 @@ import Counter from '../../counter'
 
 const Details = ({ id, image, name, category, description, price, onAddToCart }) => {
 
-    
-
     return (
         <div className='cardDetail'>
             <img className='cardImageDetail' src={image} alt={name} />
