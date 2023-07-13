@@ -1,4 +1,4 @@
-.cardDetail{
+.cardDetail {
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
@@ -8,28 +8,28 @@
     justify-content: center;
     margin: 0.6rem 2.5rem;
     padding: 0.8rem;
-    height:400px;
+    height: 400px;
 }
 
 
-.cardImageDetail{
+.cardImageDetail {
     width: 350px;
     height: 350px;
     object-fit: cover;
 }
 
-.cardContentDetail{
+.cardContentDetail {
     justify-content: center;
     align-items: center;
 }
 
-.cardNameDetail{
+.cardNameDetail {
     font-size: 2.2rem;
     padding: 0.3rem;
     text-align: center;
 }
 
-.cardCategoryDetail{
+.cardCategoryDetail {
     font-size: 1.3rem;
     color: blueviolet;
     font-weight: bold;
@@ -37,14 +37,14 @@
     text-align: center;
 }
 
-.cardDescriptionDetail{
+.cardDescriptionDetail {
     font-size: 1.3rem;
     min-height: 4rem;
     text-align: center;
     padding-inline: 50px;
 }
 
-.cardPriceDetail{
+.cardPriceDetail {
     font-size: 1.5rem;
     font-weight: bold;
     color: blueviolet;
@@ -53,14 +53,14 @@
 }
 
 
-.cardActionsDetail{
+.cardActionsDetail {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.cardActionsDetail button{
+.cardActionsDetail button {
     border: none;
     background-color: blueviolet;
     color: white;
@@ -68,9 +68,47 @@
     border-radius: 0.2rem;
 }
 
-.cardButtonDetail{
+.cardActionsDetail button:hover{
+    background-color: rgb(107, 34, 175);
+}
+
+.cardButtonDetail {
     width: 7rem;
     height: 2rem;
     cursor: pointer;
-    
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+    .cardDetail {
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .cardImageDetail {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cardNameDetail {
+        font-size: 1.9rem;
+    }
+
+    .cardCategoryDetail {
+        font-size: 1rem;
+        padding: 0.2rem;
+    }
+
+    .cardDescriptionDetail {
+        font-size: 1.1rem;
+        padding-inline: 10px;
+    }
+
+    .cardPriceDetail {
+        font-size: 1.2rem;
+    }
+
+    .cardButtonDetail {
+        width: 6.8rem;
+        height: 1.8rem;
+    }
 }

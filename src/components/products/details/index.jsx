@@ -1,21 +1,12 @@
+// DATOS PARA VISTA INDIVIDUAL DEL PRODUCTO
+
 import './styles.css'
 import Counter from '../../counter'
-import { useState } from 'react'
 
 
-const Details = ({ id, image, name, category, description, price, onAddToCart, onShowDetails }) => {
+const Details = ({ id, image, name, category, description, price, onAddToCart }) => {
 
-    const [counter, setCounter] = useState(0);
-    const isValidCounter = counter > 0;
-
-    const incrementCounter = () => {
-        setCounter((prevCounter) => prevCounter + 1);
-    };
-
-    const decrementCounter = () => {
-        if (!isValidCounter) return;
-        setCounter((prevCounter) => prevCounter - 1);
-    }
+    
 
     return (
         <div className='cardDetail'>
@@ -27,7 +18,7 @@ const Details = ({ id, image, name, category, description, price, onAddToCart, o
                 <p className='cardPriceDetail'>${price}</p>
                 <div className='cardActionsDetail'>
                 <button onClick={onAddToCart} className='cardButtonDetail'>Añadir al carrito</button>
-                <Counter counter={counter} onDecrementCounter={decrementCounter} onIncrementCounter={incrementCounter} isValidCounter={isValidCounter} />
+                <Counter />
             </div>
             </div>
             

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
 import './styles.css';
 import CartWidget from "./CartWidget";
@@ -7,23 +6,12 @@ import Input from "./input";
 const NavBar = ({ logo }) => {
     const [search, setSearch] = useState('');
     const [active, setActive] = useState(false);
-    const [productFiltered, setProductFiltered] = useState ([]);
 
-// NO FUNCIONA
-    // const filterBySearch = (query) => {
-    //     let updateProductList = [...products];
-
-    //     updateProductList = updateProductList.filter((item) => {
-    //         return item.name.toLowerCase().indexOf(query.toLowerCase()) === -1;
-    //     })
-    //     setProductFiltered(updateProductList);
-    // }
 
 
     const onChange = (event) => {
         const value = event.target.value;
         setSearch(value);
-        // filterBySearch(value);
     }
 
 

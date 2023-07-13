@@ -1,56 +1,51 @@
-import { useEffect, useState } from 'react'
 import './styles.css'
-import Card from '../../components/products/card'
-import Details from '../../components/products/details'
+import Card from '../../components/products/card/ItemListContainer'
 import Loader from '../../components/loader'
 import { useFetch } from '../../hooks/useFetch'
 import { API_URLS } from '../../constants/index'
+import { useNavigate } from 'react-router-dom'
+import Slider from '../../components/slider'
 
 
-
-function Home() { 
-
-  const [showDetails, setShowDetails] = useState(false);
-  const [productDetail, setProductDetail] = useState(null);
-  const { data, loading, error } = useFetch(API_URLS.PRODUCTS.url, API_URLS.PRODUCTS.config);
+function Home() {
+  const navigate = useNavigate();
+  const { data: products, loading: loadingProducts, error: errorProducts } = useFetch(API_URLS.PRODUCTS.url, API_URLS.PRODUCTS.config);
+  const { data: categories, loading: loadingCategories, error: errorCategories } = useFetch(API_URLS.CATEGORIES.url, API_URLS.CATEGORIES.config);
 
 
   const onShowDetails = (id) => {
-    setShowDetails(true);
-    const findProduct = data.find((product) => product.id === id);
-    setProductDetail(findProduct);
+    navigate(`/products/${id}`)
   }
 
 
 
   return (
-    <div>
-      <>
-        {showDetails ? (
-          <>
-            <div className='headerDetailContainer'>
-              {/* NO FUNCIONA */}
-              {/* <button onClick={() => setShowDetails(false)} className='backButton'>Back</button> */}
-              <h2 >Product Detail</h2>
-            </div>
-            <Details {...productDetail} />
-          </>
-        ) : (
-          <div className='cardContainer'>
-            {loading && <Loader />}
-            {error && <h2>Oops! Algo salió mal</h2>}
-            {
-              data.map((product) => (
-                <Card key={product.id} {...product} onShowDetails={onShowDetails} />
-              ))
-            }
-          </div>
-        )}
+    <>
+      <div className='categoriesContainer'>
+        {loadingCategories && <Loader />}
+        {errorCategories && <h2>Oops! Algo salió mal</h2>}
+        <Slider>
+          {
+            categories.map((category) => (
+              <div key={category.id} className='categoryContainer'>
+                <p className='categoryName'>{category.name}</p>
+              </div>
+            ))
+          }
+        </Slider>
 
-      </>
+      </div>
+      <div className='cardContainer'>
+        {loadingProducts && <Loader />}
+        {errorProducts && <h2>Oops! Algo salió mal</h2>}
+        {
+          products.map((product) => (
+            <Card key={product.id} {...product} onShowDetails={onShowDetails} />
+          ))
+        }
+      </div>
 
-
-    </div >
+    </>
   )
 }
 

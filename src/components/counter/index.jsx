@@ -1,7 +1,19 @@
 import './styles.css'
-/* eslint-disable react/prop-types */
-const Counter = ({ counter, onDecrementCounter, onIncrementCounter, isValidCounter }) => {
+import { useState } from 'react';
 
+const Counter = () => {
+// { counter, onDecrementCounter, onIncrementCounter, isValidCounter }
+  const [counter, setCounter] = useState(0);
+    const isValidCounter = counter > 0;
+
+    const onIncrementCounter = () => {
+        setCounter((prevCounter) => prevCounter + 1);
+    };
+
+    const onDecrementCounter = () => {
+        if (!isValidCounter) return;
+        setCounter((prevCounter) => prevCounter - 1);
+    }
 
   return (
     <div className='counterContainer'>
